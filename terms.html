@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1222">
+  <meta name="description" content="EkoSan Terms of Service — rules and conditions for using the EkoSan Discord bot.">
+  <title>Terms of Service — EkoSan</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070b14; --panel: #0d1423; --panel2: #121d30;
+      --text: #f4f7ff; --muted: #b5c3e5; --accent: #76d9d0;
+      --line: rgba(172, 192, 255, .15); --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0; color: var(--text); line-height: 1.75;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 12% 0%, rgba(70,205,190,.075), transparent 31rem), radial-gradient(ellipse at 100% 34%, rgba(124,105,255,.065), transparent 28rem), var(--bg);
+    }
+    a { color: #aeb8ff; text-decoration: none; }
+    a:hover { color: white; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(7,11,20,.92); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--text); font-size: 1.5rem; font-weight: 850; letter-spacing: -.05em; }
+    .brand-mark { width: 41px; height: 41px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(145deg,#42c9bd,#7f8fff); box-shadow: 0 8px 24px rgba(66,201,189,.20); font-size: 1.3rem; }
+    .brand-name span { color: var(--accent); }
+    nav { display: flex; align-items: center; gap: clamp(14px,3vw,30px); }
+    nav a { color: var(--muted); font-size: .92rem; font-weight: 650; }
+    nav a.current { color: #aab3ff; }
+    nav a.invite-link { color: #d5d9ff; border: 1px solid rgba(174,184,255,.28); border-radius: 999px; padding: 8px 13px; background: rgba(124,105,255,.10); }
+    nav a.invite-link:hover { background: rgba(124,105,255,.18); }
+    .menu { display: none; border: 1px solid var(--line); border-radius: 12px; padding: 8px 11px; background: var(--panel); color: var(--text); font-size: 1.1rem; }
+    .hero { padding: 58px 0 34px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 13px; color: #aebaff; font-weight: 750; font-size: .88rem; letter-spacing: .04em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem,6vw,4.4rem); letter-spacing: -.065em; line-height: 1.05; margin: 0 0 18px; }
+    .gradient { background: linear-gradient(100deg,#64d7cb,#9aa5ff 70%,#d6c4ff); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .intro { max-width: 760px; color: var(--muted); font-size: 1.06rem; margin: 0; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: rgba(255,255,255,.035); border-radius: 999px; padding: 8px 13px; color: #c5d0f2; font-size: .88rem; }
+    .layout { display: grid; grid-template-columns: 245px minmax(0,1fr); gap: 24px; align-items: start; padding: 20px 0 72px; }
+    .toc { position: sticky; top: 98px; border: 1px solid var(--line); border-radius: var(--radius); padding: 19px; background: rgba(10,16,29,.94); }
+    .toc h2 { font-size: .96rem; margin: 0 0 12px; }
+    .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+    .toc a { display: block; padding: 6px 8px; border-radius: 9px; color: var(--muted); font-size: .85rem; line-height: 1.4; }
+    .toc a:hover { background: rgba(91,210,197,.12); color: white; }
+    .document { min-width: 0; }
+    .term-section { padding: 25px 28px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg,rgba(17,27,45,.88),rgba(10,16,29,.97)); scroll-margin-top: 100px; }
+    .section-title { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 11px; }
+    .number { flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 13px; background: rgba(91,210,197,.13); color: #9ce9df; font-weight: 800; }
+    h2 { font-size: 1.22rem; line-height: 1.4; margin: 4px 0 0; letter-spacing: -.025em; }
+    .term-section p { color: #c1cce7; margin: 10px 0 0; }
+    .term-section ul { color: #c1cce7; padding-left: 23px; margin: 10px 0 0; }
+    .term-section li { padding-left: 3px; margin: 5px 0; }
+    .term-section strong { color: #f0f3ff; }
+    .callout { border: 1px solid rgba(91,210,197,.24); background: rgba(91,210,197,.07); padding: 15px 17px; border-radius: 15px; margin-top: 17px; color: #cbd5f4; }
+    .contact-card { margin-top: 12px; padding: 18px; border: 1px solid var(--line); background: rgba(8,14,27,.25); border-radius: 16px; }
+    .contact-card p { margin: 4px 0; }
+    footer { border-top: 1px solid var(--line); background: rgba(6,11,22,.3); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding: 25px 0; }
+    .foot-brand { display: flex; align-items: center; gap: 10px; }
+    .foot-brand .brand-mark { width: 35px; height: 35px; font-size: 1.1rem; border-radius: 12px; }
+    .foot-brand strong { display: block; line-height: 1.2; }
+    .foot-brand small { color: var(--muted); }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .foot-links a { color: var(--muted); font-size: .9rem; }
+    .copyright { padding: 0 0 20px; text-align: center; color: #8190b1; font-size: .82rem; }
+    @media(max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .toc ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media(max-width: 560px) {
+      .wrap { width: calc(100% - 26px); }
+      .nav { min-height: 68px; }
+      .brand { font-size: 1.32rem; }
+      .brand-mark { width: 37px; height: 37px; }
+      .menu { display: inline-flex; }
+      nav { display: none; position: absolute; top: 68px; left: 13px; right: 13px; padding: 14px; flex-direction: column; align-items: stretch; gap: 9px; border: 1px solid var(--line); border-radius: 17px; background: #0b1220; box-shadow: 0 18px 40px rgba(0,0,0,.3); }
+      nav.open { display: flex; }
+      nav a { padding: 7px; }
+      .hero { padding-top: 42px; }
+      .layout { padding-top: 10px; }
+      .toc ol { grid-template-columns: 1fr; }
+      .term-section { padding: 20px 18px; border-radius: 18px; }
+      .section-title { gap: 11px; }
+      .number { flex-basis: 34px; width: 34px; height: 34px; border-radius: 11px; }
+      h2 { font-size: 1.1rem; }
+    }
+
+    /* Gentle entrance animation; content remains readable if motion is disabled. */
+    @keyframes termsPageIn {
+      from { opacity: 0; transform: translateY(9px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body { animation: termsPageIn .48s ease-out both; }
+    .hero { animation: termsPageIn .55s ease-out both; }
+    .toc { animation: termsPageIn .58s ease-out .06s both; }
+    .term-section { animation: termsPageIn .52s ease-out both; }
+    .term-section:nth-child(1) { animation-delay: .04s; }
+    .term-section:nth-child(2) { animation-delay: .08s; }
+    .term-section:nth-child(3) { animation-delay: .12s; }
+    .term-section:nth-child(4) { animation-delay: .16s; }
+    .term-section:nth-child(5) { animation-delay: .20s; }
+    .term-section:nth-child(6) { animation-delay: .24s; }
+    .term-section:nth-child(7) { animation-delay: .28s; }
+    .term-section:nth-child(8) { animation-delay: .32s; }
+    .term-section:nth-child(9) { animation-delay: .36s; }
+    .term-section:nth-child(10) { animation-delay: .40s; }
+    .term-section:nth-child(11) { animation-delay: .44s; }
+    .term-section:nth-child(12) { animation-delay: .48s; }
+    .term-section { transition: border-color .2s ease, background-color .2s ease, transform .2s ease; }
+    .term-section:hover { border-color: rgba(91,210,197,.24); }
+
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { animation: none !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="EkoSan home">
+      <span class="brand-mark" aria-hidden="true"><img src="ekosan.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></span>
+      <span class="brand-name">Eko<span>San</span></span>
+    </a>
+    <button class="menu" id="menuToggle" aria-expanded="false" aria-label="Open navigation menu">☰</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="index.html">home</a>
+      <a class="current" href="terms.html">terms of service</a>
+      <a href="privacy.html">privacy policy</a>
+      <a class="invite-link" href="https://discord.com/oauth2/authorize?client_id=1563548751292014692&amp;scope=bot%20applications.commands&amp;permissions=8866461766385663" target="_blank" rel="noopener noreferrer">add to Discord ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">✦ EkoSan · Legal</p>
+      <h1>Terms of <span class="gradient">Service</span></h1>
+      <p class="intro">These terms explain the conditions for accessing and using EkoSan. Please read them before using the bot.</p>
+      <div class="meta">
+        <span class="pill">📄 Version 1.0.0</span>
+        <span class="pill">🗓 Effective: 29 Oct 2026</span>
+        <span class="pill">↻ Last updated: 29 Oct 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#acceptance">01 · Acceptance</a></li>
+        <li><a href="#service">02 · The Service</a></li>
+        <li><a href="#responsibilities">03 · User Responsibilities</a></li>
+        <li><a href="#external">04 · External Content</a></li>
+        <li><a href="#safeguards">05 · Safeguards</a></li>
+        <li><a href="#dataset">06 · !ask &amp; Dataset</a></li>
+        <li><a href="#copyright">07 · Copyright</a></li>
+        <li><a href="#availability">08 · Availability</a></li>
+        <li><a href="#suspension">09 · Restrictions</a></li>
+        <li><a href="#liability">10 · Liability</a></li>
+        <li><a href="#changes">11 · Changes</a></li>
+        <li><a href="#contact">12 · Contact</a></li>
+      </ol>
+    </aside>
+
+    <article class="document">
+      <section class="term-section" id="acceptance">
+        <div class="section-title"><span class="number">01</span><h2>Acceptance of These Terms</h2></div>
+        <p>By accessing or using EkoSan, its commands, or its features, you agree to these Terms of Service.</p>
+        <p>Before using EkoSan for the first time, users must explicitly accept these Terms through the bot’s designated acceptance process.</p>
+        <p>If you decline these Terms, you must not use EkoSan. Access to its functionality will remain unavailable until you accept them.</p>
+        <p>Your acceptance applies to your use of EkoSan and does not replace your obligation to follow Discord’s Terms of Service, Discord’s Community Guidelines, applicable laws, or the rules established by individual Discord server owners.</p>
+        <p>If these Terms change materially, EkoSan may require users to review and accept the updated version before continuing to use the bot.</p>
+      </section>
+
+      <section class="term-section" id="service">
+        <div class="section-title"><span class="number">02</span><h2>Description of the Service</h2></div>
+        <p>EkoSan is a multipurpose Discord bot that provides features including, but not limited to:</p>
+        <ul>
+          <li>Retrieving and sharing images, attachments, and other content from internet sources.</li>
+          <li>Sharing memes, humorous images, and similar material.</li>
+          <li>Answering questions through the <strong>!ask {message}</strong> command using a question-and-answer dataset.</li>
+          <li>Providing additional features that may be introduced in future updates.</li>
+        </ul>
+        <p>Features, commands, safeguards, and functionality may change, be restricted, or be discontinued as the service develops.</p>
+        <p>EkoSan is provided as a software service and does not guarantee that every response, attachment, image, or answer will be accurate, appropriate, available, or suitable for every user or situation.</p>
+      </section>
+
+      <section class="term-section" id="responsibilities">
+        <div class="section-title"><span class="number">03</span><h2>User Responsibilities</h2></div>
+        <p>You are responsible for how you use EkoSan and for the requests you submit through its commands.</p>
+        <p>You agree not to use EkoSan to facilitate unlawful activities, harassment, exploitation, abuse, or violations of Discord’s policies.</p>
+        <p>You are responsible for evaluating content before viewing, downloading, sharing, or relying on it.</p>
+        <p>You must exercise particular care when using commands that retrieve material from external websites or produce answers from a dataset.</p>
+        <p>Server owners and administrators remain responsible for managing their communities, configuring available permissions, establishing server rules, and addressing inappropriate content within their servers.</p>
+        <p>Nothing in these Terms removes responsibilities imposed by applicable law.</p>
+      </section>
+
+      <section class="term-section" id="external">
+        <div class="section-title"><span class="number">04</span><h2>Internet Content and External Sources</h2></div>
+        <p>EkoSan may retrieve, display, or distribute content originating from external websites and other internet sources.</p>
+        <p>Such content may include images, memes, attachments, links, and other materials that EkoSan does not create or independently verify.</p>
+        <p>EkoSan does not guarantee the accuracy, safety, legality, reliability, or appropriateness of externally sourced content.</p>
+        <p>External websites may change their content, remove files, introduce redirects, or provide material that differs from what was originally requested.</p>
+        <p>Users should exercise caution when opening external links or downloading attachments.</p>
+        <p>EkoSan is not responsible for the independent actions of third-party websites or for content changes made by their operators. However, this does not exclude responsibility that cannot legally be excluded.</p>
+      </section>
+
+      <section class="term-section" id="safeguards">
+        <div class="section-title"><span class="number">05</span><h2>Content Filtering and Safeguards</h2></div>
+        <p>EkoSan currently uses a copyright-related filter as part of its content-handling process.</p>
+        <p>This filter does not constitute a comprehensive safety or content moderation system.</p>
+        <p>At present, users must not assume that every image, attachment, response, or externally sourced item has been screened for every potentially harmful, explicit, disturbing, unlawful, or otherwise inappropriate category.</p>
+        <p>EkoSan’s safeguards may be expanded in future updates to address additional categories of content and requests. Planned safeguards are not guaranteed to be available until they have actually been implemented and deployed.</p>
+        <p>Users must not deliberately exploit weaknesses in EkoSan’s safeguards to violate these Terms, Discord’s policies, or applicable laws.</p>
+        <p>The existence of filtering limitations does not authorize prohibited conduct.</p>
+      </section>
+
+      <section class="term-section" id="dataset">
+        <div class="section-title"><span class="number">06</span><h2>The !ask Command and Question-and-Answer Dataset</h2></div>
+        <p>EkoSan’s <strong>!ask {message}</strong> command uses a question-and-answer dataset to generate or select responses.</p>
+        <p>Questions submitted through this command, together with their corresponding answers, may be collected and incorporated into the dataset to improve the service.</p>
+        <p>By using this command, you acknowledge that your submitted question and its associated answer may be retained and used for this purpose, as further explained in EkoSan’s <a href="privacy.html">Privacy Policy</a>.</p>
+        <p>Users should not submit passwords, authentication tokens, financial information, private personal information, or other sensitive information through this command.</p>
+        <p>EkoSan’s answers may be incomplete, inaccurate, outdated, misleading, or inappropriate for a particular situation. Users should independently verify important information rather than treating EkoSan’s answers as authoritative.</p>
+      </section>
+
+      <section class="term-section" id="copyright">
+        <div class="section-title"><span class="number">07</span><h2>Intellectual Property and Copyright</h2></div>
+        <p>EkoSan includes a copyright-related filter intended to help restrict certain copyrighted content.</p>
+        <p>However, this filter is not a guarantee that every shared item is free from copyright restrictions or that every potentially infringing item will be detected.</p>
+        <p>Content retrieved from the internet may belong to third-party copyright holders.</p>
+        <p>Users are responsible for respecting applicable intellectual property laws and must not deliberately use EkoSan to facilitate copyright infringement.</p>
+        <p>Nothing in these Terms grants users ownership of third-party content or permission to use it beyond the rights granted by its owner or applicable law.</p>
+        <p>Users may report suspected copyright violations through the contact method designated by the operator.</p>
+      </section>
+
+      <section class="term-section" id="availability">
+        <div class="section-title"><span class="number">08</span><h2>Availability and Service Changes</h2></div>
+        <p>EkoSan may experience downtime, technical failures, inaccurate responses, unavailable sources, or interruptions.</p>
+        <p>The service and its features may be modified, suspended, or discontinued without guaranteeing advance notice.</p>
+        <p>EkoSan is provided without a guarantee of uninterrupted availability or error-free operation.</p>
+        <p>Where applicable law requires particular service standards or remedies, those legal requirements continue to apply.</p>
+      </section>
+
+      <section class="term-section" id="suspension">
+        <div class="section-title"><span class="number">09</span><h2>Suspension and Restrictions</h2></div>
+        <p>Access to EkoSan may be restricted or suspended if a user violates these Terms, abuses the service, exploits its safeguards, or creates a significant operational or safety concern.</p>
+        <p>EkoSan may also restrict access when necessary to investigate abuse, address technical problems, comply with legal requirements, or protect the service and its users.</p>
+        <p>Users who decline these Terms cannot access functionality protected by the acceptance requirement.</p>
+      </section>
+
+      <section class="term-section" id="liability">
+        <div class="section-title"><span class="number">10</span><h2>Disclaimers and Limitation of Liability</h2></div>
+        <p>To the extent permitted by applicable law, EkoSan is provided on an “as is” and “as available” basis.</p>
+        <p>The operator does not guarantee that information, answers, images, attachments, or other content provided through EkoSan will be accurate, complete, suitable, lawful, or free from errors.</p>
+        <p>To the extent permitted by applicable law, the operator disclaims responsibility for losses arising from reliance on inaccurate information, the independent conduct of third-party websites, or circumstances outside the operator’s reasonable control.</p>
+        <p>Nothing in these Terms excludes or limits liability where such exclusion or limitation would be unlawful. These Terms do not eliminate responsibilities that applicable law imposes on the operator.</p>
+      </section>
+
+      <section class="term-section" id="changes">
+        <div class="section-title"><span class="number">11</span><h2>Changes to These Terms</h2></div>
+        <p>These Terms may be updated as EkoSan’s functionality, safeguards, or operating requirements change.</p>
+        <p>The current version will be published on EkoSan’s official Terms of Service page.</p>
+        <p>Where a material change requires renewed acceptance, users will be asked to review and accept the updated Terms before continuing to use the affected functionality.</p>
+      </section>
+
+      <section class="term-section" id="contact">
+        <div class="section-title"><span class="number">12</span><h2>Contact</h2></div>
+        <p>Questions about these Terms may be directed to:</p>
+        <div class="contact-card">
+          <p><strong>Service:</strong> MisadTeam</p>
+          <p><strong>Contact:</strong> <a href="mailto:misadteam@gmail.com?subject=ERequest%20-%20EkoSan">misadteam@gmail.com</a></p>
+          <p><strong>Subject line:</strong> Please title your email “ERequest” or “Eko request”.</p>
+        </div>
+        <div class="callout">By accepting these Terms, you acknowledge that you have had the opportunity to review the conditions governing your use of EkoSan.</div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="foot-brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><img src="ekosan.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></span>
+      <span><strong>EkoSan</strong><small>A friendlier Discord experience.</small></span>
+    </a>
+    <div class="foot-links">
+      <a href="index.html">home</a>
+      <a href="terms.html">terms of service</a>
+      <a href="privacy.html">privacy policy</a>
+      <a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">public dataset ↗</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1563548751292014692&amp;scope=bot%20applications.commands&amp;permissions=8866461766385663" target="_blank" rel="noopener noreferrer">add to Discord ↗</a>
+    </div>
+  </div>
+  <div class="wrap copyright">© <span id="year"></span> EkoSan · Maintained by Misad011</div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    menuToggle.textContent = open ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    menuToggle.textContent = '☰';
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
