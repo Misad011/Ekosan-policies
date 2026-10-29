@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1222">
+  <meta name="description" content="Meet EkoSan, a friendly Discord bot for questions, internet content, memes, and more.">
+  <title>EkoSan — Your friendly Discord bot</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1222;
+      --panel: #121d32;
+      --panel-light: #192843;
+      --text: #f4f7ff;
+      --muted: #b5c3e5;
+      --accent: #7887ff;
+      --accent-2: #a18bff;
+      --line: rgba(172, 192, 255, .15);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 82% 9%, rgba(87, 106, 255, .18), transparent 34rem),
+        radial-gradient(ellipse at 5% 35%, rgba(73, 133, 255, .09), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11, 18, 34, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 76px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-size: 1.55rem; font-weight: 850; letter-spacing: -.05em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 14px; display: block;
+      object-fit: cover; object-position: center;
+      border: 1px solid rgba(190, 204, 255, .25);
+      box-shadow: 0 8px 24px rgba(217, 70, 239, .22);
+      flex: 0 0 auto;
+    }
+    .brand span span { color: #8996ff; }
+    .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
+    .nav-links a { color: var(--muted); font-size: .93rem; font-weight: 650; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #aab3ff; }
+    .nav-links a.active::after { content: ""; display: block; height: 3px; border-radius: 4px; background: var(--accent); margin-top: 7px; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 12px; padding: 9px 12px; font-size: 1.1rem; }
+    .hero { padding: 82px 0 74px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 42px; }
+    .eyebrow { color: #a9b7ff; font-weight: 750; letter-spacing: .02em; margin: 0 0 14px; }
+    h1 { font-size: clamp(3.4rem, 8vw, 6.4rem); line-height: .98; letter-spacing: -.075em; margin: 0; }
+    .gradient-text { background: linear-gradient(100deg, #7b8dff, #b4a0ff 70%, #e0c2ff); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .hero h2 { font-size: clamp(1.25rem, 2.6vw, 1.8rem); color: #c4d0ff; font-weight: 650; margin: 22px 0 12px; }
+    .hero-copy { max-width: 540px; color: var(--muted); font-size: 1.05rem; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 13px 21px; font-weight: 750; transition: transform .2s, box-shadow .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: linear-gradient(105deg, #587eff, #8871ff); box-shadow: 0 12px 28px rgba(93, 112, 255, .25); }
+    .button-secondary { color: #d7dfff; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
+    .mascot-stage {
+      min-height: 360px; position: relative; display: grid; place-items: center;
+      isolation: isolate;
+    }
+    .orb { position: absolute; width: min(78%, 360px); aspect-ratio: 1; border-radius: 50%; background: linear-gradient(145deg, rgba(95, 119, 255, .45), rgba(217, 70, 239, .35)); filter: drop-shadow(0 0 70px rgba(99, 106, 255, .2)); z-index: -2; }
+    .mascot-card {
+      width: min(100%, 390px); height: 390px; display: grid; place-items: center;
+      border: 1px solid rgba(190, 204, 255, .18); border-radius: 38px;
+      background: linear-gradient(145deg, rgba(36, 54, 89, .48), rgba(19, 29, 50, .58));
+      box-shadow: 0 28px 70px rgba(0,0,0,.22); transform: rotate(2deg);
+      position: relative; overflow: hidden;
+    }
+    .mascot-card::before { content: ""; position: absolute; width: 230px; height: 230px; border-radius: 50%; background: rgba(217, 70, 239, .10); top: -100px; right: -65px; }
+    .mascot-image {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      border-radius: inherit; transform: rotate(-2deg) scale(1.035);
+      filter: drop-shadow(0 12px 8px rgba(0,0,0,.16));
+    }
+    .float-bubble { position: absolute; display: grid; place-items: center; border: 1px solid var(--line); background: #1a2947; box-shadow: 0 14px 35px rgba(0,0,0,.22); border-radius: 18px; width: 62px; height: 62px; font-size: 1.7rem; }
+    .bubble-one { right: 2%; top: 7%; transform: rotate(8deg); }
+    .bubble-two { left: 0; bottom: 12%; transform: rotate(-9deg); }
+    .spark { position: absolute; color: #e7a4ff; font-size: 2rem; }
+    .spark-one { top: 10%; left: 10%; } .spark-two { bottom: 8%; right: 8%; }
+    section { padding: 64px 0; }
+    .section-heading { text-align: center; margin: 0 auto 32px; max-width: 650px; }
+    .section-heading h2 { font-size: clamp(1.8rem, 4vw, 2.55rem); letter-spacing: -.045em; margin: 0 0 8px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature {
+      padding: 24px; border-radius: var(--radius); border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(29, 45, 73, .86), rgba(19, 30, 51, .92));
+      transition: transform .2s, border-color .2s;
+    }
+    .feature:hover { transform: translateY(-4px); border-color: rgba(146, 160, 255, .4); }
+    .feature-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 17px; font-size: 1.5rem; margin-bottom: 15px; background: linear-gradient(145deg, #657fff, #8d76ff); }
+    .feature:nth-child(2) .feature-icon { background: linear-gradient(145deg, #a16dff, #786cff); }
+    .feature:nth-child(3) .feature-icon { background: linear-gradient(145deg, #43cbb8, #64dfbd); }
+    .feature:nth-child(4) .feature-icon { background: linear-gradient(145deg, #f06d9d, #ff91b5); }
+    .feature:nth-child(5) .feature-icon { background: linear-gradient(145deg, #f5b64c, #ffcf79); }
+    .feature:nth-child(6) .feature-icon { background: linear-gradient(145deg, #8b78ff, #b29aff); }
+    .feature h3 { margin: 0 0 6px; font-size: 1.08rem; }
+    .feature p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .note { margin-top: 22px; color: #a8b8dc; font-size: .9rem; text-align: center; }
+    .cta { padding-top: 12px; padding-bottom: 78px; }
+    .cta-panel { text-align: center; padding: 42px 24px; border: 1px solid var(--line); border-radius: 28px; background: radial-gradient(ellipse at top, rgba(113, 116, 255, .2), transparent 60%), var(--panel); }
+    .cta-panel h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 0 0 8px; letter-spacing: -.04em; }
+    .cta-panel p { color: var(--muted); margin: 0 auto 22px; max-width: 560px; }
+    footer { border-top: 1px solid var(--line); background: rgba(6, 11, 22, .3); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 27px 0; }
+    .footer-brand { display: flex; align-items: center; gap: 11px; }
+    .footer-brand .brand-mark { width: 35px; height: 35px; border-radius: 12px; }
+    .footer-brand strong { display: block; line-height: 1.25; }
+    .footer-brand small { color: var(--muted); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-links a { color: var(--muted); font-size: .9rem; }
+    .footer-links a:hover { color: white; }
+    .copyright { text-align: center; color: #8190b1; font-size: .82rem; padding: 0 0 20px; }
+    @media (max-width: 800px) {
+      .hero { padding: 58px 0 48px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-copy { max-width: 620px; }
+      .mascot-stage { min-height: 330px; }
+      .mascot-card { width: min(100%, 330px); height: 330px; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 68px; }
+      .brand { font-size: 1.35rem; }
+      .brand-mark { width: 37px; height: 37px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 14px; right: 14px; padding: 16px; flex-direction: column; align-items: stretch; gap: 12px; border: 1px solid var(--line); border-radius: 18px; background: #111c31; box-shadow: 0 18px 40px rgba(0,0,0,.3); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 7px 8px; }
+      .nav-links a.active::after { display: none; }
+      h1 { font-size: clamp(3.1rem, 16vw, 4.8rem); }
+      .hero { padding-top: 46px; }
+      .mascot-stage { min-height: 285px; }
+      .mascot-card { width: min(100%, 275px); height: 275px; border-radius: 28px; }
+      .orb { width: 75%; }
+      .float-bubble { width: 49px; height: 49px; font-size: 1.35rem; }
+      section { padding: 48px 0; }
+      .features { grid-template-columns: 1fr; }
+      .feature { padding: 21px; }
+      .actions .button { width: 100%; }
+      .footer-links { gap: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="EkoSan home">
+        <img class="brand-mark" src="ekosan.png" alt="">
+        <span>Eko<span>San</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a class="active" href="index.html">home</a>
+        <a href="terms.html">terms of service</a>
+        <a href="privacy.html">privacy policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Your friendly Discord bot</p>
+          <h1>Eko<span class="gradient-text">San</span><span aria-hidden="true" style="color:#e7a4ff">✦</span></h1>
+          <h2>Ask. Discover. Have fun.</h2>
+          <p class="hero-copy">A helpful Discord companion for questions, internet content, memes, and more. Just ask — and let EkoSan help make your server a little more fun.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://discord.com/oauth2/authorize?client_id=1563548751292014692&amp;scope=bot%20applications.commands&amp;permissions=8866461766385663" target="_blank" rel="noopener noreferrer">☁️ Add to Discord <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#features">Explore features <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="mascot-stage" aria-label="EkoSan mascot illustration">
+          <span class="orb" aria-hidden="true"></span>
+          <span class="spark spark-one" aria-hidden="true">✦</span>
+          <span class="spark spark-two" aria-hidden="true">✧</span>
+          <div class="float-bubble bubble-one" aria-hidden="true">💬</div>
+          <div class="float-bubble bubble-two" aria-hidden="true">✨</div>
+          <div class="mascot-card">
+            <img class="mascot-image" src="ekosan.png" alt="EkoSan's pink-haired mascot illustration">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>What can EkoSan do?</h2>
+          <p>A few things you can explore with EkoSan in your Discord server.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🌐</div>
+            <h3>Internet Content</h3>
+            <p>Get images and attachments from the internet and discover interesting content.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">😂</div>
+            <h3>Memes &amp; Fun</h3>
+            <p>Find memes and funny images to add a little laughter to your day.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">❔</div>
+            <h3>!ask Command</h3>
+            <p>Ask questions and get answers from EkoSan's curated question-and-answer dataset.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">©️</div>
+            <h3>Copyright Filtering</h3>
+            <p>EkoSan has a copyright-related filter. Its coverage may be limited, so use the bot responsibly.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🛡️</div>
+            <h3>Safety in Progress</h3>
+            <p>Additional safeguards may be developed over time. Do not assume every inappropriate request is automatically blocked.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">⭐</div>
+            <h3>Growing Dataset</h3>
+            <p>The question-and-answer collection can grow as the maintainer reviews and manually adds entries.</p>
+          </article>
+        </div>
+        <p class="note">Features may change as EkoSan continues to develop.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-panel">
+          <h2>Ready to meet EkoSan?</h2>
+          <p>Bring EkoSan to your server and explore what the bot can do. Please review the policies before using it.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="button button-primary" href="https://discord.com/oauth2/authorize?client_id=1563548751292014692&amp;scope=bot%20applications.commands&amp;permissions=8866461766385663" target="_blank" rel="noopener noreferrer">☁️ Add to Discord <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="terms.html">Read the terms</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="footer-brand" href="index.html">
+        <img class="brand-mark" src="ekosan.png" alt="">
+        <span><strong>EkoSan</strong><small>A friendlier Discord experience.</small></span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">home</a>
+        <a href="terms.html">terms of service</a>
+        <a href="privacy.html">privacy policy</a>
+        <a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">public dataset ↗</a>
+      </nav>
+    </div>
+    <div class="wrap copyright">© <span id="year"></span> EkoSan · Maintained by Misad011</div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
