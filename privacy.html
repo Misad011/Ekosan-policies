@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1222">
+  <meta name="description" content="EkoSan Privacy Policy — learn how EkoSan handles submitted questions, AI-generated responses, and third-party AI processing.">
+  <title>Privacy Policy — EkoSan</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1222; --panel: #121d32; --text: #f4f7ff;
+      --muted: #b5c3e5; --accent: #8996ff; --line: rgba(172,192,255,.15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0; color: var(--text); line-height: 1.75;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 80% 0%, rgba(87,106,255,.16), transparent 34rem), var(--bg);
+    }
+    a { color: #aeb8ff; text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { color: white; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(11,18,34,.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--text); font-size: 1.5rem; font-weight: 850; letter-spacing: -.05em; }
+    .brand-mark { width: 41px; height: 41px; border-radius: 14px; display: block; object-fit: cover; object-position: center; border: 1px solid rgba(190,204,255,.22); box-shadow: 0 8px 24px rgba(217,70,239,.2); flex: 0 0 auto; }
+    .brand-name span { color: var(--accent); }
+    nav { display: flex; align-items: center; gap: clamp(14px,3vw,30px); }
+    nav a { color: var(--muted); font-size: .92rem; font-weight: 650; }
+    nav a.current { color: #aab3ff; }
+    .menu { display: none; border: 1px solid var(--line); border-radius: 12px; padding: 8px 11px; background: var(--panel); color: var(--text); font-size: 1.1rem; }
+    .hero { padding: 58px 0 34px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 13px; color: #aebaff; font-weight: 750; font-size: .88rem; letter-spacing: .04em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem,6vw,4.4rem); letter-spacing: -.065em; line-height: 1.05; margin: 0 0 18px; }
+    .gradient { background: linear-gradient(100deg,#7b8dff,#b4a0ff 70%,#e0c2ff); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .intro { max-width: 760px; color: var(--muted); font-size: 1.06rem; margin: 0; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: rgba(255,255,255,.035); border-radius: 999px; padding: 8px 13px; color: #c5d0f2; font-size: .88rem; }
+    .layout { display: grid; grid-template-columns: 255px minmax(0,1fr); gap: 24px; align-items: start; padding: 20px 0 72px; }
+    .toc { position: sticky; top: 98px; border: 1px solid var(--line); border-radius: 22px; padding: 19px; background: rgba(18,29,50,.85); }
+    .toc h2 { font-size: .96rem; margin: 0 0 12px; }
+    .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+    .toc a { display: block; padding: 6px 8px; border-radius: 9px; color: var(--muted); font-size: .85rem; line-height: 1.4; }
+    .toc a:hover { background: rgba(137,150,255,.1); color: white; }
+    .document { min-width: 0; }
+    .policy-section { padding: 25px 28px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(145deg,rgba(29,45,73,.76),rgba(18,29,50,.92)); scroll-margin-top: 100px; }
+    .section-title { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 11px; }
+    .number { flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 13px; background: rgba(125,140,255,.15); color: #b9c2ff; font-weight: 800; }
+    h2 { font-size: 1.22rem; line-height: 1.4; margin: 4px 0 0; letter-spacing: -.025em; }
+    .policy-section p { color: #c1cce7; margin: 10px 0 0; }
+    .policy-section ul { color: #c1cce7; padding-left: 23px; margin: 10px 0 0; }
+    .policy-section li { padding-left: 3px; margin: 5px 0; }
+    .policy-section strong { color: #f0f3ff; }
+    .callout { border: 1px solid rgba(137,150,255,.22); background: rgba(103,119,255,.08); padding: 15px 17px; border-radius: 15px; margin-top: 17px; color: #cbd5f4; }
+    .contact-card { margin-top: 12px; padding: 18px; border: 1px solid var(--line); background: rgba(8,14,27,.25); border-radius: 16px; }
+    .contact-card p { margin: 4px 0; }
+    footer { border-top: 1px solid var(--line); background: rgba(6,11,22,.3); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; padding: 25px 0; }
+    .foot-brand { display: flex; align-items: center; gap: 10px; color: var(--text); }
+    .foot-brand .brand-mark { width: 35px; height: 35px; border-radius: 12px; }
+    .foot-brand strong { display: block; line-height: 1.2; }
+    .foot-brand small { color: var(--muted); }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .foot-links a { color: var(--muted); font-size: .9rem; }
+    .copyright { padding: 0 0 20px; text-align: center; color: #8190b1; font-size: .82rem; }
+    @media(max-width:800px) { .layout { grid-template-columns: 1fr; } .toc { position: static; } .toc ol { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media(max-width:560px) {
+      .wrap { width: calc(100% - 26px); }
+      .nav { min-height: 68px; }
+      .brand { font-size: 1.32rem; }
+      .brand-mark { width: 37px; height: 37px; }
+      .menu { display: inline-flex; }
+      nav { display: none; position: absolute; top: 68px; left: 13px; right: 13px; padding: 14px; flex-direction: column; align-items: stretch; gap: 9px; border: 1px solid var(--line); border-radius: 17px; background: #111c31; box-shadow: 0 18px 40px rgba(0,0,0,.3); }
+      nav.open { display: flex; } nav a { padding: 7px; }
+      .hero { padding-top: 42px; } .layout { padding-top: 10px; }
+      .toc ol { grid-template-columns: 1fr; }
+      .policy-section { padding: 20px 18px; border-radius: 18px; }
+      .section-title { gap: 11px; } .number { flex-basis: 34px; width: 34px; height: 34px; border-radius: 11px; }
+      h2 { font-size: 1.1rem; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition-duration: .01ms !important; } }
+  
+:root{--bg:#050711;--panel:rgba(13,18,38,.76);--panel2:rgba(20,27,54,.78);--text:#f4f3ff;--muted:#a7acc9;--line:rgba(190,190,255,.15);--accent:#a99aff;--accent2:#76d9e8;--pink:#eea6d9}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{color:var(--text)!important;background:radial-gradient(ellipse at 50% -15%,rgba(103,83,198,.22),transparent 42rem),radial-gradient(ellipse at 90% 45%,rgba(53,133,170,.10),transparent 35rem),linear-gradient(180deg,#070916 0%,#050711 58%,#09091a 100%)!important;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.22;background-image:radial-gradient(1px 1px at 20px 30px,#fff 99%,transparent),radial-gradient(1px 1px at 80px 110px,#bcb6ff 99%,transparent),radial-gradient(1px 1px at 160px 70px,#fff 99%,transparent);background-size:220px 180px}
+a{transition:color .25s,transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,background .35s}
+header{background:rgba(5,7,17,.72)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(22px)!important}
+.nav{min-height:78px!important}.brand{letter-spacing:-.055em!important}.brand-mark{border-radius:15px!important;box-shadow:0 0 30px rgba(169,154,255,.25)!important}
+.brand span span,.brand-name span,.gradient,.gradient-text{background:linear-gradient(100deg,#d6caff,#8eddf0 55%,#f1b7e2);-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.nav-links a,nav a{transition:color .2s,transform .25s}.nav-links a:hover,nav a:hover{color:#fff!important;transform:translateY(-2px)}
+.hero{position:relative;isolation:isolate;padding-top:clamp(75px,11vw,145px)!important;padding-bottom:100px!important}
+.hero:before{content:"";position:absolute;z-index:-1;width:min(58vw,680px);aspect-ratio:1;border-radius:50%;left:50%;top:40%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(125,105,225,.16),rgba(74,147,180,.06) 42%,transparent 70%);filter:blur(10px);animation:nebula 12s ease-in-out infinite alternate}
+@keyframes nebula{to{transform:translate(-46%,-54%) scale(1.12);opacity:.7}}
+.hero h1{font-size:clamp(3rem,8vw,6.8rem)!important;line-height:.98!important;letter-spacing:-.075em!important;text-wrap:balance}.hero p{max-width:680px}
+.button{border-radius:999px!important;padding:14px 22px!important;transition:transform .3s,box-shadow .3s,border-color .3s!important}
+.button:hover{transform:translateY(-4px) scale(1.025)!important;box-shadow:0 14px 40px rgba(126,111,226,.22)}
+.button-primary{background:linear-gradient(115deg,#a99aff,#6bbfd1)!important;color:#0a0b19!important;border:0!important}
+.button-secondary{background:rgba(255,255,255,.045)!important;border:1px solid var(--line)!important;backdrop-filter:blur(12px)}
+.section-heading{margin-bottom:42px!important}.section-heading h2,.cta-panel h2{font-size:clamp(2rem,4vw,3.3rem)!important;letter-spacing:-.055em!important}
+.feature,.feature-card,.cta-panel,.toc,.policy-section,.hero-card,.mascot-card{background:linear-gradient(145deg,rgba(19,24,49,.82),rgba(9,13,29,.68))!important;border:1px solid var(--line)!important;border-radius:26px!important;box-shadow:inset 0 1px rgba(255,255,255,.035),0 18px 55px rgba(0,0,0,.18)!important;backdrop-filter:blur(18px);transform-style:preserve-3d}
+.feature{padding:28px!important;transition:transform .4s,border-color .35s,box-shadow .35s!important}.feature:hover{border-color:rgba(169,154,255,.55)!important;box-shadow:0 24px 70px rgba(59,57,132,.22)!important}
+.feature-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:rgba(169,154,255,.11);border:1px solid rgba(169,154,255,.18)}
+.note{color:var(--muted)}.cta-panel{padding:clamp(30px,6vw,70px)!important;position:relative;overflow:hidden}.cta-panel:after{content:"✦";position:absolute;right:8%;top:6%;font-size:8rem;color:rgba(188,175,255,.09);pointer-events:none}
+footer{background:rgba(4,6,15,.62)!important;border-top:1px solid var(--line)!important}.footer-inner{padding-top:34px!important;padding-bottom:24px!important}.footer-links{flex-wrap:wrap}
+.policy-section{padding:clamp(22px,4vw,38px)!important;margin-bottom:18px!important;line-height:1.85}.policy-section h2{letter-spacing:-.035em}.toc{padding:24px!important}
+#cosmosCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#cosmosCursor{position:fixed;left:0;top:0;width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(153,139,255,.10),rgba(100,185,210,.035) 35%,transparent 70%);transform:translate(-50%,-50%);mix-blend-mode:screen}
+.cosmos-toolbar{display:flex;align-items:center;gap:8px}.cosmos-tool{min-height:40px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--text);font:600 .82rem inherit;cursor:pointer}
+.cosmos-tool:hover{background:rgba(169,154,255,.13);border-color:rgba(169,154,255,.5)}
+.cosmos-panel{position:fixed;right:18px;top:88px;z-index:50;width:min(320px,calc(100vw - 36px));padding:20px;border:1px solid var(--line);border-radius:22px;background:rgba(10,13,29,.94);backdrop-filter:blur(24px);box-shadow:0 24px 80px #0008;display:none}
+.cosmos-panel.open{display:block;animation:panelIn .28s}@keyframes panelIn{from{opacity:0;transform:translateY(-8px) scale(.98)}to{opacity:1;transform:none}}
+.cosmos-panel h3{margin:0 0 14px;font-size:1.1rem}.cosmos-setting{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:.9rem}
+.cosmos-setting select{max-width:130px;background:#151a35;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px}.cosmos-switch{accent-color:#a99aff;width:18px;height:18px}
+.eko-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:60;max-width:calc(100vw - 30px);padding:13px 18px;border:1px solid rgba(185,175,255,.24);border-radius:18px;background:rgba(13,16,36,.92);backdrop-filter:blur(18px);box-shadow:0 14px 50px #0008;color:var(--text);transition:.35s;pointer-events:none}
+.eko-toast.show{opacity:1;transform:translate(-50%,0)}.eko-toast b{color:#d6caff}
+.cosmos-ripple{position:fixed;width:12px;height:12px;border:1px solid rgba(207,197,255,.75);border-radius:50%;pointer-events:none;z-index:40;animation:ripple .7s ease-out forwards}
+@keyframes ripple{to{width:100px;height:100px;opacity:0;transform:translate(-44px,-44px)}}
+.cosmos-starburst{position:fixed;pointer-events:none;z-index:40;font-size:14px;color:#d7d0ff;animation:starburst .8s ease-out forwards}
+@keyframes starburst{to{transform:translate(var(--dx),var(--dy)) rotate(110deg) scale(.2);opacity:0}}
+.cosmos-reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.cosmos-reveal.visible{opacity:1;transform:none}
+.social-orbit{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.social-orbit a{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.035);font-size:.88rem;font-weight:650}
+.social-orbit a:hover{transform:translateY(-3px);border-color:rgba(169,154,255,.55);background:rgba(169,154,255,.1)}
+.eko-hello{display:flex;gap:13px;align-items:center;padding:16px 18px;border:1px solid rgba(169,154,255,.2);border-radius:20px;background:rgba(169,154,255,.055);margin:25px 0}.eko-hello .spark{font-size:1.6rem}.eko-hello p{margin:0;font-size:.92rem;color:var(--muted)}
+@media(max-width:760px){.cosmos-toolbar{gap:5px}.cosmos-tool{padding:8px 10px}.nav{flex-wrap:wrap}.hero{padding-top:76px!important}.cosmos-panel{top:75px}}
+@media(max-width:520px){.cosmos-toolbar .tool-label{display:none}.social-orbit a{font-size:.8rem}.feature{padding:22px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cosmos-reveal{opacity:1;transform:none}#cosmosCursor{display:none}}
+
+  
+/* EkoSan v1.0 stability and responsive polish */
+:root { color-scheme: dark; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { min-width:320px; overflow-x:hidden; }
+img,svg,video,canvas { max-width:100%; }
+.wrap { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+header { position:sticky; top:0; z-index:100; }
+.nav, .footer-inner { min-width:0; }
+nav a, .footer-links a, .foot-links a { overflow-wrap:anywhere; }
+button,a { -webkit-tap-highlight-color:transparent; }
+button:focus-visible,a:focus-visible { outline:2px solid #b9a9ff; outline-offset:3px; }
+main { position:relative; isolation:isolate; }
+section { scroll-margin-top:100px; }
+.features { align-items:stretch; }
+.feature { min-width:0; height:100%; overflow-wrap:anywhere; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; }
+.button { display:inline-flex; align-items:center; justify-content:center; text-align:center; max-width:100%; }
+.command-grid,.roadmap-grid,.update-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.command-card,.roadmap-card,.update-card {
+  min-width:0; padding:22px; border:1px solid var(--line,rgba(172,192,255,.15));
+  border-radius:20px; background:rgba(255,255,255,.035);
+}
+.command-card h3,.roadmap-card h3,.update-card h3 { margin:0 0 9px; }
+.command-card p,.roadmap-card p,.update-card p { margin:7px 0 0; color:var(--muted); }
+.command-name { display:inline-block; margin-bottom:8px; padding:5px 9px; border-radius:9px;
+  color:#d8ceff; background:rgba(169,154,255,.12); font:600 .88rem ui-monospace,monospace; overflow-wrap:anywhere; }
+.section-heading { max-width:760px; }
+.subtle-hint { margin-top:16px!important; color:rgba(210,205,235,.28)!important; font-size:.72rem!important; letter-spacing:.025em; }
+.status-pill { display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(169,154,255,.22);
+  background:rgba(169,154,255,.08); border-radius:999px; padding:5px 10px; font-size:.76rem; color:#d4cbff; }
+.disabled-apply { opacity:.65; cursor:not-allowed; filter:saturate(.7); }
+.server-link { border-color:rgba(169,154,255,.4)!important; }
+@media(max-width:700px) {
+ .wrap { width:min(100% - 30px,1120px); }
+ .command-grid,.roadmap-grid,.update-grid { grid-template-columns:1fr; }
+ .hero-grid { gap:32px!important; }
+ .mascot-stage { max-width:100%; }
+ .actions .button { flex:1 1 180px; }
+ header .nav { gap:12px; }
+}
+@media(max-width:420px) {
+ .wrap { width:calc(100% - 26px); }
+ .feature,.command-card,.roadmap-card,.update-card { padding:18px!important; }
+}
+
+
+.brand-mark-fallback { display:grid!important; place-items:center; color:#fff; font-weight:850; font-size:1.2rem;
+  background:linear-gradient(145deg,#ed9bd4,#8e80ff); border:1px solid rgba(255,255,255,.25); }
+.mascot-placeholder { width:100%; height:100%; min-height:250px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:3px; border-radius:inherit;
+  background:radial-gradient(circle at 50% 35%,rgba(237,155,212,.26),transparent 42%),
+  linear-gradient(145deg,rgba(169,154,255,.12),rgba(15,20,42,.25)); color:#f6eaff; text-align:center; }
+.mascot-placeholder strong { font-size:clamp(3rem,8vw,5.5rem); letter-spacing:-.08em; line-height:1.05; }
+.mascot-placeholder small { font-size:1.35rem; color:#c7baff; letter-spacing:.22em; }
+.mascot-star { color:#f2b7e2; font-size:2rem; margin-bottom:8px; }
+.mascot-caption { margin-top:16px; color:var(--muted); font-size:.82rem; }
+
+
+.brand-mark-wrap{display:inline-grid;place-items:center;width:42px;height:42px;flex:0 0 42px}
+.brand-mark-img{width:42px;height:42px;object-fit:contain;border-radius:13px}
+.brand-mark-wrap .brand-mark-fallback{width:42px;height:42px;border-radius:13px}
+.brand-mark-fallback[hidden]{display:none!important}
+\n</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="EkoSan home">
+      <span class="brand-mark-wrap" aria-hidden="true">
+        <img class="brand-mark-img" src="ekosan.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="brand-mark brand-mark-fallback" hidden>E</span>
+      </span>
+      <span class="brand-name">Eko<span>San</span></span>
+    </a>
+    <button class="menu" id="menuToggle" aria-expanded="false" aria-label="Open navigation menu">☰</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="index.html">home</a>
+      <a href="terms.html">terms of service</a>
+      <a class="current" href="privacy.html">privacy policy</a>
+      <a href="https://discord.gg/dXA8PT4Duq" target="_blank" rel="noopener noreferrer">official server ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">✦ EkoSan · Your data</p>
+      <h1>Privacy <span class="gradient">Policy</span></h1>
+      <p class="intro">A clear explanation of how EkoSan handles submitted questions, AI-generated responses, third-party AI processing, and what happens when entries are published.</p>
+      <div class="meta">
+        <span class="pill">🔒 Privacy information</span>
+        <span class="pill">🗓 Last updated: 1 Nov 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#introduction">01 · Introduction</a></li>
+        <li><a href="#collection">02 · Information We Collect</a></li>
+        <li><a href="#access">03 · Public Dataset &amp; Access</a></li>
+        <li><a href="#use">04 · How We Use Data</a></li>
+        <li><a href="#security">05 · Storage &amp; Security</a></li>
+        <li><a href="#third-parties">06 · Third-Party Services</a></li>
+        <li><a href="#ai-features">07 · AI Features &amp; NVIDIA NIM</a></li>
+        <li><a href="#retention">08 · Retention &amp; Removal</a></li>
+        <li><a href="#sensitive">09 · Sensitive Information</a></li>
+        <li><a href="#changes">10 · Policy Changes</a></li>
+        <li><a href="#contact">11 · Contact</a></li>
+      </ol>
+    </aside>
+
+    <article class="document">
+      <section class="policy-section" id="introduction">
+        <div class="section-title"><span class="number">01</span><h2>Introduction</h2></div>
+        <p>Welcome to EkoSan, a Discord bot developed and maintained by Misad011 and the MisadTeam.</p>
+        <p>This Privacy Policy explains what information EkoSan collects, how that information is used, who can access it, and how it is stored and shared.</p>
+        <p>By using EkoSan, you acknowledge that you have read this Privacy Policy. Please read it carefully before using the bot.</p>
+      </section>
+
+      <section class="policy-section" id="collection">
+        <div class="section-title"><span class="number">02</span><h2>Information We Collect</h2></div>
+        <p>EkoSan’s <strong>!ask</strong> command uses a question-and-answer dataset to provide responses.</p>
+        <p>Questions submitted through <strong>!ask</strong> may be collected by the maintainer for consideration when expanding or improving EkoSan’s dataset.</p>
+        <p>Collected entries generally follow this JSON structure:</p>
+        <ul><li><strong>Q:</strong> The question submitted by the user.</li><li><strong>A:</strong> The corresponding answer.</li></ul>
+        <p>The <strong>!ask</strong> command prefix itself is not included in the stored question.</p>
+        <p>EkoSan’s question-and-answer collection does not intentionally include Discord usernames, Discord user IDs, or other Discord account identifiers.</p>
+        <p>Questions are not automatically published to the public database. The maintainer manually collects and adds selected question-and-answer entries to the official dataset.</p>
+        <p>Users should avoid submitting personal, confidential, or sensitive information because questions may be retained and could eventually be published.</p>
+        <p><strong>EkoSan’s /ai command</strong> does not store questions, responses, conversation history, or any Discord account identifiers in the bot’s own systems. Messages sent through <strong>/ai</strong> are transmitted to NVIDIA for processing as described in Section 07 below.</p>
+      </section>
+
+      <section class="policy-section" id="access">
+        <div class="section-title"><span class="number">03</span><h2>Public Dataset and Data Access</h2></div>
+        <p>EkoSan’s question-and-answer database is hosted in the following public GitHub repository:</p>
+        <p><a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">github.com/Misad011/Ekosan-Database ↗</a></p>
+        <p>The repository is publicly readable. Consequently, anyone may be able to view, download, or copy its contents.</p>
+        <p>Members of the MisadTeam may access collected question-and-answer data for purposes related to maintaining, reviewing, and improving EkoSan.</p>
+        <p>Only Misad011 has authorization to modify the official JSON files and database contents.</p>
+        <p>Although access to modify the official dataset is restricted, this does not prevent others from reading or copying publicly available information.</p>
+      </section>
+
+      <section class="policy-section" id="use">
+        <div class="section-title"><span class="number">04</span><h2>How We Use Collected Information</h2></div>
+        <p>Collected questions and answers may be used to:</p>
+        <ul>
+          <li>Consider new entries for EkoSan’s question-and-answer dataset.</li>
+          <li>Expand the range of questions EkoSan can answer.</li>
+          <li>Improve the usefulness and relevance of responses.</li>
+          <li>Review existing entries and identify errors or missing information.</li>
+          <li>Support the ongoing development and maintenance of EkoSan.</li>
+</ul>
+        <p>The maintainer, Misad011, manually decides which collected entries to add to the official database. Submission does not guarantee publication.</p>
+        <p>Once an entry is published, it becomes part of the public dataset, where visitors may be able to view, download, or copy it.</p>
+        <p>Only Misad011 can modify the official dataset.</p>
+      </section>
+
+      <section class="policy-section" id="security">
+        <div class="section-title"><span class="number">05</span><h2>Data Storage and Security</h2></div>
+        <p>The question-and-answer dataset is stored in JSON format and hosted through GitHub.</p>
+        <p>We restrict modification of the official dataset to Misad011. Members of the MisadTeam may access the collected data as described in this policy.</p>
+        <p>However, no online service or storage system can guarantee absolute security. Because the dataset is publicly accessible, information included in it should not be considered private.</p>
+        <p>We encourage users not to submit personal information, passwords, private conversations, or other confidential material.</p>
+      </section>
+
+      <section class="policy-section" id="third-parties">
+        <div class="section-title"><span class="number">06</span><h2>Third-Party Services</h2></div>
+        <p>EkoSan relies on third-party services, including Discord for bot functionality, GitHub for hosting its public dataset, and NVIDIA for AI-generated responses through the <strong>/ai</strong> command.</p>
+        <p>When using these services, users are also subject to the relevant providers’ own privacy policies and terms.</p>
+        <p><strong>GitHub repository:</strong> <a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">Ekosan-Database ↗</a></p>
+        <p><strong>NVIDIA:</strong> See Section 07 for details about AI processing, or refer to <a href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/" target="_blank" rel="noopener noreferrer">NVIDIA’s Privacy Policy ↗</a>.</p>
+        <p>EkoSan’s use of these services does not mean that Misad011 or the MisadTeam controls all data processing performed independently by those providers.</p>
+      </section>
+
+      <section class="policy-section" id="ai-features">
+        <div class="section-title"><span class="number">07</span><h2>AI Features and NVIDIA NIM</h2></div>
+        <p>EkoSan’s <strong>/ai</strong> command sends prompts to a model endpoint provided through NVIDIA NIM (NVIDIA Inference Microservices). The exact data terms depend on the NVIDIA service and endpoint being used.</p>
+        <p>When you use <strong>/ai</strong>, your prompt is transmitted to NVIDIA for processing. For NVIDIA API Catalog trial services, the API Trial Terms say that content is generally not stored or used after a session unless an exception or service-specific disclosure applies. The same terms also describe collection of session metrics, logs, feedback, and user/generated content for product improvement, including AI models, as well as security, fraud, and abuse monitoring. Check the exact endpoint terms because other NVIDIA offerings may have different conditions.</p>
+        <p>For detailed information about how NVIDIA handles transmitted data, please refer to:</p>
+        <ul>
+          <li><a href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/" target="_blank" rel="noopener noreferrer">NVIDIA Privacy Policy ↗</a></li>\n          <li><a href="https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf" target="_blank" rel="noopener noreferrer">NVIDIA API Trial Terms of Service ↗</a></li>
+        </ul>
+        <p>The MisadTeam does not control NVIDIA’s data-handling practices. Do not submit personal, confidential, or sensitive information through <strong>/ai</strong>. NVIDIA’s API Trial Terms also prohibit certain categories of content, including pornographic, obscene, vulgar, offensive, hateful, harassing, violent, or threatening content. Roleplay prompts must comply with the terms that apply to the endpoint in use.</p>
+        <p>The bot’s own handling of other command data is described in the relevant sections of this policy. Temporary conversational context for <strong>/ai</strong>, if enabled, may be held in memory and cleared when the service restarts; this does not override NVIDIA’s separate processing under its terms.</p>
+        <div class="callout">AI-generated responses may be inaccurate, incomplete, or inappropriate. The MisadTeam is not responsible for the content of AI-generated responses. Do not submit sensitive, personal, or confidential information through the <strong>/ai</strong> command.</div>
+      </section>
+
+      <section class="policy-section" id="retention">
+        <div class="section-title"><span class="number">08</span><h2>Data Retention and Removal</h2></div>
+        <p>Questions and answers may remain in EkoSan’s dataset for as long as they are considered useful to the project.</p>
+        <p>Because the dataset is publicly accessible, third parties may copy or download its contents. Removing an entry from the official repository cannot guarantee the removal of copies held elsewhere.</p>
+        <p>If you believe an entry contains personal information or other information that should not have been published, contact the EkoSan maintainer through an official contact method provided by the project.</p>
+        <p>Requests will be reviewed, but removal cannot be guaranteed in every circumstance.</p>
+      </section>
+
+      <section class="policy-section" id="sensitive">
+        <div class="section-title"><span class="number">09</span><h2>Children’s Privacy and Sensitive Information</h2></div>
+        <p>Users should not submit personal, confidential, or sensitive information through EkoSan.</p>
+        <p>Do not use the bot to publish another person’s private information without authorization.</p>
+        <p>EkoSan’s safeguards and content-handling capabilities may change as development continues. Users should not assume that every inappropriate or sensitive submission will automatically be detected or blocked.</p>
+      </section>
+
+      <section class="policy-section" id="changes">
+        <div class="section-title"><span class="number">10</span><h2>Changes to This Privacy Policy</h2></div>
+        <p>This Privacy Policy may be updated as EkoSan develops or its data-handling practices change.</p>
+        <p>When significant changes are made, the revised policy will be published at the project’s official Privacy Policy page.</p>
+        <p>Continued use of EkoSan after an updated policy takes effect will be subject to the applicable rules and requirements.</p>
+      </section>
+
+      <section class="policy-section" id="contact">
+        <div class="section-title"><span class="number">11</span><h2>Contact</h2></div>
+        <p>For questions, privacy concerns, or requests concerning collected question-and-answer entries, contact the EkoSan maintainer through an official contact method published by the project.</p>
+        <div class="contact-card">
+          <p><strong>Maintainer:</strong> Misad011</p>
+          <p><strong>Project:</strong> EkoSan</p>
+          <p><strong>Public dataset:</strong> <a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">github.com/Misad011/Ekosan-Database ↗</a></p>
+          <p><strong>AI provider:</strong> <a href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/" target="_blank" rel="noopener noreferrer">NVIDIA Privacy Policy ↗</a></p>
+        </div>
+        <div class="callout">This Privacy Policy describes EkoSan’s intended data-handling practices. It does not replace applicable privacy laws or the terms and policies of third-party services.</div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="foot-brand" href="index.html">
+      <span class="brand-mark-wrap" aria-hidden="true">
+        <img class="brand-mark-img" src="ekosan.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="brand-mark brand-mark-fallback" hidden>E</span>
+      </span>
+      <span><strong>EkoSan</strong><small>A friendlier Discord experience.</small></span>
+    </a>
+    <div class="foot-links">
+      <a href="index.html">home</a>
+      <a href="terms.html">terms of service</a>
+      <a href="privacy.html">privacy policy</a>
+      <a href="https://github.com/Misad011/Ekosan-Database" target="_blank" rel="noopener noreferrer">public dataset ↗</a>
+    </div>
+  </div>
+  <div class="wrap copyright">© <span id="year"></span> EkoSan · Maintained by Misad011</div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    menuToggle.textContent = open ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    menuToggle.textContent = '☰';
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+
+</body>
+</html>
